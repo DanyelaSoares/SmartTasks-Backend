@@ -1,4 +1,6 @@
 # SmartTasks – Backend
+![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow?style=for-the-badge)
+
 
 Este repositório contém o **backend** do projeto **SmartTasks**, um sistema de gerenciamento de tarefas fullstack.
 O backend foi desenvolvido em **Java com Spring Boot** e fornece APIs REST consumidas pelo frontend em React.
