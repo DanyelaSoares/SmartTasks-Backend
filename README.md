@@ -9,8 +9,8 @@ O backend foi desenvolvido em **Java com Spring Boot** e fornece APIs REST consu
 
 ## 🚀 Funcionalidades
 
-- Estrutura de gestão de usuários
-- Autenticação de usuários
+- Gerenciamento de usuários
+- Autenticação e autorização com Spring Security
 - Endpoints REST para integração com o frontend
 - Base para gerenciamento de tarefas (em evolução)
 
@@ -46,3 +46,10 @@ mvn spring-boot:run
 O backend estará disponível em:
 👉 http://localhost:8080
 
+## 🧩 Arquitetura
+
+O backend segue arquitetura baseada em camadas típica de aplicações Spring Boot:
+
+- Controllers – exposição dos endpoints REST
+- Services – regras de negócio
+- Repositories – acesso a dados
