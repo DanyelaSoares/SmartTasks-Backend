@@ -122,21 +122,24 @@ Cria nova tarefa.
 }
 ```
 # 🗄 6. Modelo de Dados
-📌 Entidade User
+## 📌 Entidade User
 ```
-Campo	Tipo	Descrição
-id	Long	Identificador
-name	String	Nome do usuário
-email	String	Email único
-senha	String	Senha
+| Campo | Tipo   | Descrição        |
+|-------|--------|------------------|
+| id    | Long   | Identificador    |
+| name  | String | Nome do usuário  |
+| email | String | Email único      |
+| senha | String | Senha            |
 ```
-📌 Entidade Task
+
+## 📌 Entidade Task
 ```
-Campo	Tipo	Descrição
-id	Long	Identificador
-titulo	String	Título da tarefa
-concluida	boolean	Status da tarefa
-user	User	Relacionamento N:1
+| Campo     | Tipo    | Descrição               |
+|-----------|---------|-------------------------|
+| id        | Long    | Identificador           |
+| titulo    | String  | Título da tarefa        |
+| concluida | boolean | Status da tarefa        |
+| user      | User    | Relacionamento N:1      |
 ```
 🔗 Relacionamento
 ```
@@ -176,7 +179,7 @@ mvn spring-boot:run
 ````
 Servidor disponível em:
 ````dtd
-http://localhost:8080
+http://localhost:8080 
 ````
 # 🚀 9. Próximas Evoluções
 
