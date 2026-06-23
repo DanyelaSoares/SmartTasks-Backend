@@ -34,4 +34,20 @@ public class TaskController {
         task.setUser(user);
         return taskRepository.save(task);
     }
+    // concluir tarefa
+    @PutMapping("/{id}")
+    public Task concluir(@PathVariable Long id) {
+
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Tarefa não encontrada"));
+
+        task.setConcluida(true);
+
+        return taskRepository.save(task);
+    }
+    // excluir tarefa
+    @DeleteMapping("/{id}")
+    public void excluir(@PathVariable Long id) {
+        taskRepository.deleteById(id);
+    }
 }
