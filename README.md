@@ -11,22 +11,22 @@ Backend REST para gerenciamento de tarefas com autenticação JWT
 
 ## 📑 Sumário
 
-- [Visão Geral](#-1-visão-geral)
-- [Requisitos Funcionais](#-2-requisitos-funcionais)
-- [Requisitos Não Funcionais](#-3-requisitos-não-funcionais)
-- [Tecnologias Utilizadas](#-4-tecnologias-utilizadas)
-- [Status do Projeto](#-5-status-do-projeto)
-- [Objetivos do Projeto](#-6-objetivos-do-projeto)
-- [Arquitetura em Camadas](#-7-arquitetura-em-camadas)
-- [Autenticação e Segurança](#-8-autenticação-e-segurança)
-- [Endpoints](#-9-endpoints)
-- [Modelo de Dados](#-10-modelo-de-dados)
-- [UML](#-11-uml)
-- [Configuração e Execução](#-12-configuração-e-execução)
-- [Próximas Evoluções](#-13-próximas-evoluções)
-- [Autora](#-14-autora)
+- [Visão Geral](#-visão-geral)
+- [Requisitos Funcionais](#-requisitos-funcionais)
+- [Requisitos Não Funcionais](#️-requisitos-não-funcionais)
+- [Tecnologias Utilizadas](#️-tecnologias-utilizadas)
+- [Status do Projeto](#-status-do-projeto)
+- [Objetivos do Projeto](#-objetivos-do-projeto)
+- [Arquitetura em Camadas](#️-arquitetura-em-camadas)
+- [Autenticação e Segurança](#-autenticação-e-segurança)
+- [Endpoints](#-endpoints)
+- [Modelo de Dados](#-modelo-de-dados)
+- [UML](#-uml)
+- [Configuração e Execução](#️-configuração-e-execução)
+- [Próximas Evoluções](#-próximas-evoluções)
+- [Autora](#-autora)
 
-## 📌 1. Visão Geral
+## 📌 Visão Geral
 
 O **SmartTasks** é o backend de uma aplicação fullstack para gerenciamento de tarefas.
 Este repositório contempla exclusivamente o backend da aplicação.
@@ -52,7 +52,7 @@ A aplicação foi desenvolvida com foco em:
 O frontend da aplicação está disponível em:
 👉 https://github.com/DanyelaSoares/SmartTasks-Frontend
 
-## 📋 2. Requisitos Funcionais
+## 📋 Requisitos Funcionais
 
 RF01 – O sistema deve permitir cadastro de usuários.  
 RF02 – O sistema deve permitir autenticação via JWT.  
@@ -61,13 +61,13 @@ RF04 – O sistema deve listar tarefas por usuário autenticado.
 RF05 – O sistema deve permitir marcar tarefas como concluídas.  
 RF06 – O sistema deve permitir excluir tarefas.
 
-## ⚙️ 3. Requisitos Não Funcionais
+## ⚙️ Requisitos Não Funcionais
 
 RNF01 – A autenticação deve ser stateless.  
 RNF02 – As rotas protegidas devem exigir token válido.  
 RNF03 – O sistema deve garantir isolamento de tarefas por usuário.
 
-## 🛠 4. Tecnologias Utilizadas
+## 🛠 Tecnologias Utilizadas
 
 - Java 21
 - Spring Boot 4
@@ -77,7 +77,7 @@ RNF03 – O sistema deve garantir isolamento de tarefas por usuário.
 - MySQL
 - Maven
 
-## 📌 5. Status do Projeto
+## 📌 Status do Projeto
 
 - [x] Cadastro de usuário
 - [x] Login com JWT
@@ -90,7 +90,7 @@ RNF03 – O sistema deve garantir isolamento de tarefas por usuário.
 - [ ] Roles (ADMIN/USER)
 - [ ] Swagger/OpenAPI
 
-## 🎯 6. Objetivos do Projeto
+## 🎯 Objetivos do Projeto
 
 - Implementar autenticação stateless com JWT
 - Aplicar Spring Security com filtro personalizado
@@ -98,7 +98,7 @@ RNF03 – O sistema deve garantir isolamento de tarefas por usuário.
 - Garantir isolamento de tarefas por usuário
 - Preparar base para evolução (roles, testes, Swagger)
 
-## 🏗 7. Arquitetura em Camadas
+## 🏗 Arquitetura em Camadas
 
 O projeto segue arquitetura em camadas:
 
@@ -121,7 +121,7 @@ com.smarttasks
 └── service
 ```
 
-## 🔐 8. Autenticação e Segurança
+## 🔐 Autenticação e Segurança
 
 A autenticação é baseada em **JWT (JSON Web Token)**.
 
@@ -135,7 +135,7 @@ A autenticação é baseada em **JWT (JSON Web Token)**.
    `Authorization: Bearer <token>`
 6. `JwtAuthFilter` intercepta e valida o token
 
-## 📡 9. Endpoints
+## 📡 Endpoints
 
 ### 🔓 Autenticação
 
@@ -227,7 +227,7 @@ Remove uma tarefa.
 DELETE /tasks/1
 ```
 
-## 🗄 10. Modelo de Dados
+## 🗄 Modelo de Dados
 
 ## 📌 Entidade User
 
@@ -254,26 +254,27 @@ User 1:N Task
 Task N:1 User
 ```
 
-## 🧩 11. UML
+## 🧩 UML
 
-📌 11.1 Diagrama de Casos de Uso  
+📌 Diagrama de Casos de Uso  
 [Veja aqui](img/uml/caso-de-uso.svg)
 
-📌 11.2 Diagrama de Classes  
+📌 Diagrama de Classes  
 [Veja aqui](img/uml/classes.svg)
 
-📌 11.3 Diagrama de Sequência – Login  
+📌 Diagrama de Sequência – Login  
 [Veja aqui](img/uml/sequencia.svg)
 
-## ⚙️ 12. Configuração e Execução
+## ⚙️ Configuração e Execução
 
-### 12.1 Banco de Dados
+### Banco de Dados
 
 Crie o banco:
 
 ```sql
 CREATE DATABASE smarttasks;
 ```
+
 O script completo de criação das tabelas encontra-se em:
 
 ```text
@@ -282,7 +283,7 @@ database/smarttasks.sql
 
 Esse arquivo contém a estrutura necessária para recriar o banco de dados da aplicação.
 
-### 12.2 application.properties
+### application.properties
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/smarttasks
@@ -292,7 +293,7 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ```
 
-### 12.3 Executar
+### Executar
 
 ```bash
 mvn clean install
@@ -305,7 +306,7 @@ Servidor disponível em:
 http://localhost:8080
 ```
 
-## 🚀 13. Próximas Evoluções
+## 🚀 Próximas Evoluções
 
 - 🔐 Criptografia de senha com BCrypt
 - 👥 Implementação de roles (ADMIN / USER)
@@ -313,6 +314,6 @@ http://localhost:8080
 - 🧪 Testes unitários
 - 📘 Swagger/OpenAPI
 
-## 👩‍💻 14. Autora
+## 👩‍💻 Autora
 
 **Daniela Soares**
