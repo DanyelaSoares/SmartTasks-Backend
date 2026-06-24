@@ -11,20 +11,22 @@ Backend REST para gerenciamento de tarefas com autenticação JWT
 
 ## 📑 Sumário
 
-- [Visão Geral](#-visão-geral)
-- [Requisitos Funcionais](#-requisitos-funcionais)
-- [Requisitos Não Funcionais](#️-requisitos-não-funcionais)
-- [Tecnologias Utilizadas](#️-tecnologias-utilizadas)
-- [Status do Projeto](#-status-do-projeto)
-- [Objetivos do Projeto](#-objetivos-do-projeto)
-- [Arquitetura em Camadas](#️-arquitetura-em-camadas)
-- [Autenticação e Segurança](#-autenticação-e-segurança)
-- [Endpoints](#-endpoints)
-- [Modelo de Dados](#-modelo-de-dados)
-- [UML](#-uml)
-- [Configuração e Execução](#️-configuração-e-execução)
-- [Próximas Evoluções](#-próximas-evoluções)
-- [Autora](#-autora)
+## 📑 Sumário
+
+- [Visão Geral](#visão-geral)
+- [Requisitos Funcionais](#requisitos-funcionais)
+- [Requisitos Não Funcionais](#requisitos-não-funcionais)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Status do Projeto](#status-do-projeto)
+- [Objetivos do Projeto](#objetivos-do-projeto)
+- [Arquitetura em Camadas](#arquitetura-em-camadas)
+- [Autenticação e Segurança](#autenticação-e-segurança)
+- [Endpoints](#endpoints)
+- [Modelo de Dados](#modelo-de-dados)
+- [UML](#uml)
+- [Configuração e Execução](#configuração-e-execução)
+- [Próximas Evoluções](#próximas-evoluções)
+- [Autora](#autora)
 
 ## 📌 Visão Geral
 
@@ -98,7 +100,7 @@ RNF03 – O sistema deve garantir isolamento de tarefas por usuário.
 - Garantir isolamento de tarefas por usuário
 - Preparar base para evolução (roles, testes, Swagger)
 
-## 🏗 Arquitetura em Camadas
+## 🏗  Arquitetura em Camadas
 
 O projeto segue arquitetura em camadas:
 
