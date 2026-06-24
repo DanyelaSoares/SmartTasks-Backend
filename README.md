@@ -1,6 +1,6 @@
 
-![Java](https://img.shields.io/badge/Java-17-orange)
-![Spring Boot](https://img.shields.io/badge/SpringBoot-3.x-brightgreen)
+![Java](https://img.shields.io/badge/Java-21-orange)
+![Spring Boot](https://img.shields.io/badge/SpringBoot-4-brightgreen)
 ![JWT](https://img.shields.io/badge/Auth-JWT-blue)
 ![MySQL](https://img.shields.io/badge/Database-MySQL-lightgrey)
 
@@ -38,6 +38,7 @@ O sistema permite:
 - 📝 Criação de tarefas
 - 📋 Listagem de tarefas por usuário autenticado
 - ✔ Marcação de tarefas como concluídas
+- 🗑 Exclusão de tarefas
 
 A aplicação foi desenvolvida com foco em:
 
@@ -46,13 +47,19 @@ A aplicação foi desenvolvida com foco em:
 - Segurança de rotas
 - Estrutura escalável
 
+## 🔗 Frontend
+
+O frontend da aplicação está disponível em:
+👉 https://github.com/DanyelaSoares/SmartTasks-Frontend
+
 ## 📋 2. Requisitos Funcionais
 
 RF01 – O sistema deve permitir cadastro de usuários.  
 RF02 – O sistema deve permitir autenticação via JWT.  
 RF03 – O sistema deve permitir criação de tarefas.  
 RF04 – O sistema deve listar tarefas por usuário autenticado.  
-RF05 – O sistema deve permitir marcar tarefas como concluídas.
+RF05 – O sistema deve permitir marcar tarefas como concluídas.  
+RF06 – O sistema deve permitir excluir tarefas.
 
 ## ⚙️ 3. Requisitos Não Funcionais
 
@@ -62,8 +69,8 @@ RNF03 – O sistema deve garantir isolamento de tarefas por usuário.
 
 ## 🛠 4. Tecnologias Utilizadas
 
-- Java 17
-- Spring Boot
+- Java 21
+- Spring Boot 4
 - Spring Security
 - JWT
 - JPA / Hibernate
@@ -77,6 +84,8 @@ RNF03 – O sistema deve garantir isolamento de tarefas por usuário.
 - [x] Filtro de autenticação
 - [x] Criação de tarefas
 - [x] Listagem por usuário
+- [x] Conclusão de tarefas
+- [x] Exclusão de tarefas
 - [ ] Criptografia de senha com BCrypt
 - [ ] Roles (ADMIN/USER)
 - [ ] Swagger/OpenAPI
@@ -88,8 +97,6 @@ RNF03 – O sistema deve garantir isolamento de tarefas por usuário.
 - Estruturar backend em camadas
 - Garantir isolamento de tarefas por usuário
 - Preparar base para evolução (roles, testes, Swagger)
-
----
 
 ## 🏗 7. Arquitetura em Camadas
 
@@ -114,8 +121,6 @@ com.smarttasks
 └── service
 ```
 
----
-
 ## 🔐 8. Autenticação e Segurança
 
 A autenticação é baseada em **JWT (JSON Web Token)**.
@@ -136,19 +141,25 @@ A autenticação é baseada em **JWT (JSON Web Token)**.
 
 ### POST `/auth/register`
 
-Cadastra novo usuário.
+Cadastra um novo usuário.
+
+**Requisição:**
 
 ```json
 {
-  "name": "Daniela",
+  "nome": "Daniela",
   "email": "daniela@teste.com",
   "senha": "123456"
 }
 ```
+
+---
 
 ### POST `/auth/login`
 
-Realiza login e retorna token JWT.
+Realiza autenticação e retorna um token JWT.
+
+**Requisição:**
 
 ```json
 {
@@ -157,7 +168,7 @@ Realiza login e retorna token JWT.
 }
 ```
 
-Resposta:
+**Resposta:**
 
 ```json
 {
@@ -168,18 +179,52 @@ Resposta:
 
 ## 🔒 Tarefas (JWT obrigatório)
 
-### GET `/tasks`
+### GET `/tasks/user/{email}`
 
-Lista tarefas do usuário autenticado.
+Lista todas as tarefas do usuário informado.
 
-### POST `/tasks`
+**Exemplo:**
 
-Cria nova tarefa.
+```http
+GET /tasks/user/daniela@teste.com
+```
+
+### POST `/tasks/user/{email}`
+
+Cria uma nova tarefa para o usuário informado.
+
+**Exemplo:**
+
+```http
+POST /tasks/user/daniela@teste.com
+```
+
+**Requisição:**
 
 ```json
 {
   "titulo": "Estudar Spring Security"
 }
+```
+
+### PUT `/tasks/{id}`
+
+Marca uma tarefa como concluída.
+
+**Exemplo:**
+
+```http
+PUT /tasks/1
+```
+
+### DELETE `/tasks/{id}`
+
+Remove uma tarefa.
+
+**Exemplo:**
+
+```http
+DELETE /tasks/1
 ```
 
 ## 🗄 10. Modelo de Dados
@@ -189,7 +234,7 @@ Cria nova tarefa.
 | Campo | Tipo   | Descrição           |
 | ----- | ------ | ------------------- |
 | id    | Long   | Identificador único |
-| name  | String | Nome do usuário     |
+| nome  | String | Nome do usuário     |
 | email | String | Email único         |
 | senha | String | Senha do usuário    |
 
@@ -224,9 +269,18 @@ Task N:1 User
 
 ### 12.1 Banco de Dados
 
+Crie o banco:
+
 ```sql
 CREATE DATABASE smarttasks;
 ```
+O script completo de criação das tabelas encontra-se em:
+
+```text
+database/smarttasks.sql
+```
+
+Esse arquivo contém a estrutura necessária para recriar o banco de dados da aplicação.
 
 ### 12.2 application.properties
 
@@ -255,7 +309,7 @@ http://localhost:8080
 
 - 🔐 Criptografia de senha com BCrypt
 - 👥 Implementação de roles (ADMIN / USER)
-- ✏ Atualização e exclusão de tarefas
+- ✏ Edição de tarefas
 - 🧪 Testes unitários
 - 📘 Swagger/OpenAPI
 
