@@ -9,23 +9,6 @@ Backend REST para gerenciamento de tarefas com autenticação JWT
 
 ---
 
-## 📑 Sumário
-
-- [Visão Geral](#visão-geral)
-- [Requisitos Funcionais](#requisitos-funcionais)
-- [Requisitos Não Funcionais](#requisitos-não-funcionais)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Status do Projeto](#status-do-projeto)
-- [Objetivos do Projeto](#objetivos-do-projeto)
-- [Arquitetura em Camadas](#arquitetura-em-camadas)
-- [Autenticação e Segurança](#autenticação-e-segurança)
-- [Endpoints](#endpoints)
-- [Modelo de Dados](#modelo-de-dados)
-- [UML](#uml)
-- [Configuração e Execução](#configuração-e-execução)
-- [Próximas Evoluções](#próximas-evoluções)
-- [Autora](#autora)
-
 ## 📌 Visão Geral
 
 O **SmartTasks** é o backend de uma aplicação fullstack para gerenciamento de tarefas.
@@ -50,6 +33,7 @@ A aplicação foi desenvolvida com foco em:
 ## 🔗 Frontend
 
 O frontend da aplicação está disponível em:
+
 👉 https://github.com/DanyelaSoares/SmartTasks-Frontend
 
 ## 📋 Requisitos Funcionais
@@ -229,7 +213,7 @@ DELETE /tasks/1
 
 ## 🗄 Modelo de Dados
 
-## 📌 Entidade User
+### 📌 Entidade User
 
 | Campo | Tipo   | Descrição           |
 | ----- | ------ | ------------------- |
@@ -238,7 +222,7 @@ DELETE /tasks/1
 | email | String | Email único         |
 | senha | String | Senha do usuário    |
 
-## 📌 Entidade Task
+### 📌 Entidade Task
 
 | Campo     | Tipo    | Descrição                        |
 | --------- | ------- | -------------------------------- |
