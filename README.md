@@ -11,8 +11,6 @@ Backend REST para gerenciamento de tarefas com autenticação JWT
 
 ## 📑 Sumário
 
-## 📑 Sumário
-
 - [Visão Geral](#visão-geral)
 - [Requisitos Funcionais](#requisitos-funcionais)
 - [Requisitos Não Funcionais](#requisitos-não-funcionais)
