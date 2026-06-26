@@ -50,4 +50,15 @@ public class TaskController {
     public void excluir(@PathVariable Long id) {
         taskRepository.deleteById(id);
     }
+    // editar tarefa
+    @PutMapping("/{id}/titulo")
+    public Task editarTitulo(@PathVariable Long id, @RequestBody Task taskAtualizada) {
+
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Tarefa não encontrada"));
+
+        task.setTitulo(taskAtualizada.getTitulo());
+
+        return taskRepository.save(task);
+    }
 }
