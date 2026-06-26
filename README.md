@@ -231,12 +231,13 @@ DELETE /tasks/1
 | concluida | boolean | Indica se a tarefa foi concluída |
 | user      | User    | Relacionamento N:1 com User      |
 
-🔗 Relacionamento
+### 🔗 Relacionamento entre as entidades
 
 ```text
-User 1:N Task
-Task N:1 User
+User (1) ────────────< (N) Task
 ```
+
+Cada usuário pode possuir várias tarefas, enquanto cada tarefa pertence a apenas um usuário.
 
 ## 🧩 UML
 
